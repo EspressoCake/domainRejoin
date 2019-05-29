@@ -1,5 +1,18 @@
 class executableGenerator(object):
+    """
+    This object will create the necessary script to replace the domainMagic.cpp file.
+    """
     def __init__(self, markerFile='C:\\System32\\Health.txt', serviceGenerationCommand='sc create "VMWare" DisplayName= "VMWare Health Check Monitor" start= auto binPath= "C:\\System32\\VMWare.exe"', servicePerms='sc sdset VMWare D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)', domain=None, domainUser=None, domainPassword=None):
+        """
+        Parameters:
+            markerFile (string): The path and full name of the intended exectuable file, to be used as a service.
+            serviceGenerationCommand (string): The intended name of the service to be created, along with a display name
+            servicePerms (string): The service permissions to be applied, in SDDL format.
+            domain (string): The domain to join the machine to. Apply the correct suffix (.com, etc.).
+            domainUser (string): The account to utilize in joining to the domain, in domain\\user format.
+            domainPassword (string): The domain password to utilize.
+        """
+        
         self.markerFile = markerFile
         self.wMarkerFile = self.wideCharFormatFunction(markerFile)
         self.serviceGenerationCommand = serviceGenerationCommand
