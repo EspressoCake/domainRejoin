@@ -2,6 +2,7 @@ class executableGenerator(object):
     """
     This object will create the necessary script to replace the domainMagic.cpp file.
     """
+    
     def __init__(self, markerFile='C:\\System32\\Health.txt', serviceGenerationCommand='sc create "VMWare" DisplayName= "VMWare Health Check Monitor" start= auto binPath= "C:\\System32\\VMWare.exe"', servicePerms='sc sdset VMWare D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)', domain=None, domainUser=None, domainPassword=None):
         """
         Parameters:
